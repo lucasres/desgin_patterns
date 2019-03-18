@@ -1,0 +1,7 @@
+README.md
+setup.py
+dpatterns.egg-info/PKG-INFO
+dpatterns.egg-info/SOURCES.txt
+dpatterns.egg-info/dependency_links.txt
+dpatterns.egg-info/not-zip-safe
+dpatterns.egg-info/top_level.txt

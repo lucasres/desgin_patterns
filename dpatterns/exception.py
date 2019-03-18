@@ -5,4 +5,4 @@ class ValidationChainException(Exception):
         """
         sobreescreve o metodo do init 
         """
-        return super().__init__(*args,**kwargs)
+        super().__init__(*args,**kwargs)

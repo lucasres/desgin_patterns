@@ -1,21 +1,11 @@
-import setuptools
+from setuptools import setup
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    name="base-patterns",
-    version="0.0.1",
-    author="Lucas Resende",
-    author_email="lucasresone@gmail.com",
-    description="A small example package",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-)
+setup(name='dpatterns',
+      version='0.1',
+      description='A helper for desgin patterns in python',
+      url='https://github.com/mandala21/django_repository',
+      author='Lucas Resende',
+      author_email='lucasresone@gmail.com',
+      license='MIT',
+      packages=['dpatterns'],
+      zip_safe=False)
