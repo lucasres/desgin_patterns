@@ -1,5 +1,8 @@
 README.md
+setup.cfg
 setup.py
+dpatterns/exception.py
+dpatterns/repository.py
 dpatterns.egg-info/PKG-INFO
 dpatterns.egg-info/SOURCES.txt
 dpatterns.egg-info/dependency_links.txt
