@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+djpatterns/exception.py
+djpatterns/repository.py
+djpatterns.egg-info/PKG-INFO
+djpatterns.egg-info/SOURCES.txt
+djpatterns.egg-info/dependency_links.txt
+djpatterns.egg-info/not-zip-safe
+djpatterns.egg-info/top_level.txt
