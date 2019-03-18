@@ -6,7 +6,18 @@ Supported Patterns:
 
 # Repository
 
-First implements the repository class this code takes on that a entity is the model of django
+First implements the repository class this code takes on that a entity is the model of django. The class RepositoryBase on contains shortcuts. The philosophy behind is to create a repository.py file to save business logic. Like app this:
+```
+/product
+    __init__.py
+    views.py
+    models.py
+    repository.py <- implement yout logic here
+    ...
+```
+
+Exemple of repository.py
+
 ```
 from djpatterns.repository import RepositoryBase
 from .models import YourModel
@@ -34,7 +45,7 @@ ProductRepository.filter(name__startswith='guitar')
 #returns QuerySet
 ```
 
-You must implements you bussiness logic in the repository class like this in the *repository.py*:
+Exemple of bussiness logic in the repository class like this in the *repository.py*:
 ```
 class ProductRepository(RepositoryBase):
 
@@ -52,8 +63,7 @@ class ProductRepository(RepositoryBase):
         else:
             raise Exception('Out of stock :(')
 ```
-
-in the *view.py*:
+One time logic implemented in you *view.py* only call the method :
 ```
 from product.repository import ProductRepository
 
