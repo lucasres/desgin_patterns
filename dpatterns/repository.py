@@ -1,4 +1,4 @@
-class RepositoryMixin():
+class RepositoryBase(object):
     """ This class will served for base for all repository of project """
     class Meta:
         model = None
