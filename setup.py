@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='djpatterns',
-      version='0.1.1',
+      version='0.1.2',
       description='A helper for desgin patterns in python',
       url='https://github.com/mandala21/desgin_patterns',
       author='Lucas Resende',
