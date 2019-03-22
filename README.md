@@ -28,7 +28,8 @@ class ProductRepository(RepositoryBase):
         model = YourModel
 ```
 
-Fine, you now can access shortcuts of repository 
+Fine, you now can access shortcuts of repository. 
+For exemple
 All method:
 ```
 ProductRepository.all()
@@ -78,3 +79,56 @@ class SellProduct(generic.View):
             return HttpResponse(str(e))
 ```
 
+# Chain of Responsibility
+
+In chain of responsibility you need create one class for each responsability. Your class will inherit of class *RenposibilityBase*. Now you need only override handle method. You can pass data like dict in parameters
+
+```
+from djpatterns.responsability import ResponsabilityBase
+from djpatterns.exception import ValidationChainException
+
+class ValidateData(ResponsabilityBase):
+
+    def handle(self,data):
+        if data:
+            return True
+        else:
+            raise ValidationChainException('Nao recebi uma data')
+    
+class ValidateNome(ResponsabilityBase):
+
+    def handle(self,data):
+        if 'nome' in data:
+            return True
+        else:
+            raise ValidationChainException('Nao tem o campo nome')
+
+class ValidateCpf(ResponsabilityBase):
+
+    def handle(self,data):
+        if 'cpf' in data:
+            return True
+        else:
+            raise ValidationChainException('Nao tem o campo cpf')
+```
+
+After class created you set next class of chain and call revolver method for first class of your chain
+
+```
+c1 = ValidateData()
+c2 = ValidateNome()
+c3 = ValidateCpf()
+
+c1.set_next(c2)
+c2.set_next(c3)
+
+data = {'nome':'Lucas','cpf':'06125'}
+
+try:
+    c1.resolver(data)
+except ValidationChainException as e:
+    print(str(e))
+else:
+    print('passou')
+
+```
